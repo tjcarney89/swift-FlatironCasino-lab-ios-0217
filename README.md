@@ -2,7 +2,7 @@
 
 ![](http://i.imgur.com/Kr9XSmB.jpg?1)
 
-A lot of this project has already been built for you. The point of this lab is not to have you create everything from scratch. Instead, you will be working with a code base that has most of what you need already implemented. Before beginning the lab, take a look around the various files to see how things were implemented. This lab is to get you to use higher-order functions like map, filter, reduce and forEach.
+A lot of this project has already been built for you. The point of this lab is not to have you create everything from scratch. Instead, you will be working with a code base that has most of what you need already implemented. Before beginning the lab, take a look around the various files to see how things were implemented. This lab is to get you to use higher-order functions like map, flatMap, filter, reduce and forEach.
 
 Note: In your implementation of the following tasks, you are _not_ allowed to use a for-in loop. This is to force you to become familiar with higher-order functions. Stay out of your comfort zone, challenge yourself and learn!
 
