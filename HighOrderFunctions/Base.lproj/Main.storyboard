@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Tqk-Dy-S3e">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Flatiron Casino-->
+        <scene sceneID="kDL-2L-lyV">
+            <objects>
+                <viewController id="6WD-Nk-D4k" customClass="CasinoViewController" customModule="HighOrderFunctions" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6aI-fL-Xeg"/>
+                        <viewControllerLayoutGuide type="bottom" id="BSj-oz-gL6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Trn-Ce-Udt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenFelt" translatesAutoresizingMaskIntoConstraints="NO" id="Dhu-kp-hvI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Dhu-kp-hvI" secondAttribute="trailing" id="IfW-gy-I0f"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Dhu-kp-hvI" secondAttribute="bottom" id="ceM-os-PPh"/>
+                            <constraint firstItem="Dhu-kp-hvI" firstAttribute="top" secondItem="Trn-Ce-Udt" secondAttribute="topMargin" id="dHP-0e-mHA"/>
+                            <constraint firstItem="Dhu-kp-hvI" firstAttribute="leading" secondItem="Trn-Ce-Udt" secondAttribute="leading" id="pAv-at-UBu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Flatiron Casino" id="bhq-HG-PpZ">
+                        <barButtonItem key="rightBarButtonItem" title="🎲" id="U3h-Jz-Dxw">
+                            <connections>
+                                <action selector="showStats:" destination="6WD-Nk-D4k" id="6s5-Tv-R8c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="greenFeltImageView" destination="Dhu-kp-hvI" id="Jm0-PH-m65"/>
+                        <segue destination="box-74-7lB" kind="presentation" identifier="CardsDetail" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="rsJ-BM-gyT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sSd-AO-Jqf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="828" y="-31.03448275862069"/>
+        </scene>
+        <!--Card Detail View Controller-->
+        <scene sceneID="QVf-6C-pzB">
+            <objects>
+                <viewController id="box-74-7lB" customClass="CardDetailViewController" customModule="HighOrderFunctions" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xhW-Sr-4v2"/>
+                        <viewControllerLayoutGuide type="bottom" id="F26-r7-pEV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RQ6-e0-Pfq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FhY-AT-irH">
+                                <rect key="frame" x="16" y="60" width="343" height="533.5"/>
+                                <color key="backgroundColor" red="0.67134837447826989" green="0.96195042133331299" blue="0.73504221064402997" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.75125749143835618" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FhY-AT-irH" firstAttribute="leading" secondItem="RQ6-e0-Pfq" secondAttribute="leadingMargin" id="MYa-RG-rvE"/>
+                            <constraint firstItem="FhY-AT-irH" firstAttribute="height" secondItem="RQ6-e0-Pfq" secondAttribute="height" multiplier="0.8" id="Nk7-kM-23A"/>
+                            <constraint firstItem="FhY-AT-irH" firstAttribute="trailing" secondItem="RQ6-e0-Pfq" secondAttribute="trailingMargin" id="Zfk-XX-rbg"/>
+                            <constraint firstItem="FhY-AT-irH" firstAttribute="top" secondItem="xhW-Sr-4v2" secondAttribute="bottom" constant="40" id="m3h-uL-wda"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="FhY-AT-irH" id="ajh-S0-Yka"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3vA-1n-ydb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1752.8" y="-31.03448275862069"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1SN-Qn-1vN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tqk-Dy-S3e" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dO8-m6-VPg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6WD-Nk-D4k" kind="relationship" relationship="rootViewController" id="due-Em-EiH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bFS-RY-Pnw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-111.2" y="-31.03448275862069"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="GreenFelt" width="976" height="1921"/>
+    </resources>
+</document>
