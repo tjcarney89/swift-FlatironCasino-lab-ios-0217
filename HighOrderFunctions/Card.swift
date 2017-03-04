@@ -63,10 +63,6 @@ extension Array where Element: PlayingCard {
     
     mutating func sortCards() {
         // TODO: Use the sorted function to properly sort how the cards should line up within self (self being an instance of an Array). A call to the sorted function will return back to you a new Array. You should assign what is returned to you by sorted to self.
-        self = sorted(by: { first, second in
-            if first.rank == .ace { return true }
-            return first.rank.rawValue < second.rank.rawValue
-        })
     }
     
     mutating func shuffle() {
