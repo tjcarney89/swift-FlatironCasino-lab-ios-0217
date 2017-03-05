@@ -19,7 +19,7 @@ The main tasks that you will be implementing are the following (all of these tas
 * The `CardDetailViewController` has a `scores` stored property on it of type [`Suit` : `Int`] which should represent the total scores of all the cards within that particular pile. Implement the `calculateScores()` adhering to the TODO comment. You should look to go through all of the piles, tallying up the total score for each pile while updating the `scores` dictionary to reflect this total value (pertaining to the particular suit).
 
 ## Advanced:
-Navigate to the `Main.storyboard`. You should find that the `CardDetailViewController` is kine of bland. At this point, you should have a lot of data that we can display within this view. It's up to you how to go about doing this, but you should display all of the values you calculated above.
+Navigate to the `Main.storyboard`. You should find that the `CardDetailViewController` is kind of bland. At this point, you should have a lot of data that we can display within this view. It's up to you how to go about doing this, but you should display all of the values you calculated above.
 
 * The total scores pertaining to their suits should be displayed.
 * Each pile should display all of its cards. A stack view might be your friend here. Or not. Implement this how you like.
