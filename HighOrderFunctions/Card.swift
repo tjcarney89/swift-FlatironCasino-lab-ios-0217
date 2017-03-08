@@ -62,6 +62,7 @@ extension Card: CustomStringConvertible {
 extension Array where Element: PlayingCard {
     
     mutating func sortCards() {
+        self = self.sorted(by: { $0.rank.rawValue < $1.rank.rawValue } )
         // TODO: Use the sorted function to properly sort how the cards should line up within self (self being an instance of an Array). A call to the sorted function will return back to you a new Array. You should assign what is returned to you by sorted to self.
     }
     

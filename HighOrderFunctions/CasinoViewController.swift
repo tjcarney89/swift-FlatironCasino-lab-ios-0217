@@ -27,10 +27,30 @@ class CasinoViewController: UIViewController {
     }
     
     func createDeck() {
+        let suits = Suit.all
+        let ranks = Rank.all
+        
+        let cards = suits.flatMap { (suit)  in
+            ranks.map({ (rank) in
+                Card(rank: rank, suit: suit)
+            })
+        }
+        print(cards)
+        undealtCards = cards
+        undealtCards.shuffle()
+        
         // TODO: Create a deck (array of Cards) and assign this value to the undealtCards stored property. Force yourself to use flatpMap (only once) and map (only once) to solve this problem. Hint: Suit.all and Rank.all are your friends. After undealtCards equals this new value (being an Array of cards), shuffle it using the shuffle() method available to Arrays which we're providing for you.
     }
     
     func playCard(_ sender: UITapGestureRecognizer) {
+        if let lastCard = undealtCards.popLast() {
+            dealtCards.append(lastCard)
+            let point = sender.location(in: greenFeltImageView)
+            let cardView = createCardView(at: point)
+            cardView.card = lastCard
+        }
+        
+        
         // TODO: Use popLast to grab the last card in the undealtCards array.
         // TODO: Append that card to the dealtCards array.
         // TODO: Create a constant called point where its value will equal the return value to a call to the location(in:) method on sender passing in the greenFeltImageView in as an argument. This will give us the precise location of the tap of the user.
@@ -57,6 +77,11 @@ class CasinoViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destVC = segue.destination as? CardDetailViewController {
+            destVC.cards = dealtCards
+
+
+        }
         // TODO: Get a hold of where we're going through the destination property available on instances of UIStoryboardSegue and store that in a constant called destVC
         // TODO: destVC should have a stored property called cards. Assign dealtCards to this stored property which ultimately passes along all of the dealtCards (what the user sees on screen) to the cards stored property on our instance of CardDetailViewController (where we're going, the next screen).
     }
@@ -73,5 +98,6 @@ extension CasinoViewController: CardViewDelegate {
     func cardView(_ cardView: CardView, didFinishFlippingCard card: Card) {
         greenFeltImageView.isUserInteractionEnabled = true
     }
+
 
 }
